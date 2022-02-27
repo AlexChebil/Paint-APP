@@ -1,1 +1,1 @@
-Paint-APP
+PAINT APP
