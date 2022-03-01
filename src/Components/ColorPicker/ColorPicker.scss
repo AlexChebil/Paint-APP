@@ -10,3 +10,20 @@
 .colorInput:hover {
   filter: drop-shadow(4px 3px 3px black);
 }
+
+.similarColors {
+  display: flex;
+  justify-content: flex-start;
+  div {
+    width: 2%;
+    height: 2vw;
+    margin: 0.25em;
+    border: 2px solid black;
+  }
+  div:hover {
+    transform: scale(1.2);
+  }
+  div:active {
+    transform: scale(0.8);
+  }
+}

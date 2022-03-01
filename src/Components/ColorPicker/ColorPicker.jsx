@@ -5,7 +5,7 @@ function ColorPicker() {
   const colorRef = useRef();
   const [color, setColor] = useState("");
   const [similarColors, updateSimilarColors] = useState();
-  const numberOfSimilarColors = [0, 1, 2, 3, 4];
+  const numberOfSimilarColors = [0, 1, 2, 3, 4, 5, 6];
 
   useEffect(() => {
     //for a random color on each mount
@@ -20,7 +20,7 @@ function ColorPicker() {
     cleanHexCode = cleanHexCode.join("");
 
     const fetched = await fetch(
-      `https://www.thecolorapi.com/scheme?hex=${cleanHexCode}&count=5`
+      `https://www.thecolorapi.com/scheme?hex=${cleanHexCode}&count=7`
     );
     const res = await fetched.json();
     const data = await res.colors;
@@ -42,14 +42,16 @@ function ColorPicker() {
         ref={colorRef}
         type='color'
       />
-      {similarColors
-        ? numberOfSimilarColors.map((entry) => (
-            <li
-              key={entry}
-              style={{ backgroundColor: `${similarColors[entry].hex.value}` }}
-            ></li>
-          ))
-        : null}
+      <div className='similarColors'>
+        {similarColors
+          ? numberOfSimilarColors.map((entry) => (
+              <div
+                key={entry}
+                style={{ backgroundColor: `${similarColors[entry].hex.value}` }}
+              ></div>
+            ))
+          : null}
+      </div>
     </div>
   );
 }
