@@ -1,0 +1,12 @@
+.colorInput {
+  position: relative;
+  display: block;
+  border: none;
+  margin: 1em auto;
+  margin-left: -1em;
+  width: 110%;
+  padding: 0;
+}
+.colorInput:hover {
+  filter: drop-shadow(4px 3px 3px black);
+}
