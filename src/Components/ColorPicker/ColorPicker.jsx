@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import "./ColorPicker.scss";
 
 function ColorPicker() {
@@ -24,13 +24,11 @@ function ColorPicker() {
     );
     const res = await fetched.json();
     const data = await res.colors;
-    //console.log(data[0].hex.value);
     updateSimilarColors(data);
   }
 
   useEffect(() => {
     getSimilarColors();
-    // console.log(similarColors);
   }, [color]);
 
   return (
@@ -47,6 +45,7 @@ function ColorPicker() {
           ? numberOfSimilarColors.map((entry) => (
               <div
                 key={entry}
+                onClick={() => setColor(similarColors[entry].hex.value)}
                 style={{ backgroundColor: `${similarColors[entry].hex.value}` }}
               ></div>
             ))
