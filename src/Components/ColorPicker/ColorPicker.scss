@@ -4,7 +4,7 @@
   border: none;
   margin: 1em auto;
   margin-left: -1em;
-  width: 110%;
+  width: 105%;
   padding: 0;
 }
 .colorInput:hover {
@@ -15,8 +15,8 @@
   display: flex;
   justify-content: flex-start;
   div {
-    width: 2%;
-    height: 2vw;
+    width: 2em;
+    height: 2em;
     margin: 0.25em;
     border: 2px solid black;
   }

@@ -3,6 +3,7 @@ import "./App.scss";
 import ColorPicker from "./Components/ColorPicker/ColorPicker";
 import Name from "./Components/Name/Name";
 import { ColorContext } from "./Components/Context/Context";
+import Canvas from "./Components/Canvas/Canvas";
 
 function App() {
   const [mainColor, setMainColor] = useState("");
@@ -12,6 +13,7 @@ function App() {
       <ColorContext.Provider value={{ mainColor, setMainColor }}>
         <Name />
         <ColorPicker />
+        <Canvas />
       </ColorContext.Provider>
     </div>
   );

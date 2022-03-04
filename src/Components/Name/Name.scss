@@ -8,3 +8,6 @@
   border: 2px solid hsl(320deg 100% 81%);
   background: rgba(255, 255, 255, 0.5);
 }
+#name:focus {
+  outline: 2px solid hsl(189deg 100% 35%);
+}
