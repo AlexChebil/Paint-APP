@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
+import { ColorContext } from "../Context/Context";
 import "./ColorPicker.scss";
 
 function ColorPicker() {
@@ -6,6 +7,11 @@ function ColorPicker() {
   const [color, setColor] = useState("");
   const [similarColors, updateSimilarColors] = useState();
   const numberOfSimilarColors = [0, 1, 2, 3, 4, 5, 6];
+  const { setMainColor } = useContext(ColorContext);
+
+  useEffect(() => {
+    setMainColor(color);
+  }, [color]);
 
   useEffect(() => {
     //for a random color on each mount

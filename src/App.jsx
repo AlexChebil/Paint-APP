@@ -10,8 +10,8 @@ function App() {
 
   return (
     <div>
+      <Name />
       <ColorContext.Provider value={{ mainColor, setMainColor }}>
-        <Name />
         <ColorPicker />
         <Canvas />
       </ColorContext.Provider>
