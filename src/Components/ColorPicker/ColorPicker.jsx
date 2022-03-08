@@ -10,10 +10,6 @@ function ColorPicker() {
   const { setMainColor } = useContext(ColorContext);
 
   useEffect(() => {
-    setMainColor(color);
-  }, [color]);
-
-  useEffect(() => {
     //for a random color on each mount
     let randomHex = Math.floor(Math.random() * 16777215).toString(16); //operation to get a random valid hex code
     setColor(`#${randomHex}`);
@@ -35,6 +31,10 @@ function ColorPicker() {
 
   useEffect(() => {
     getSimilarColors();
+  }, [color]);
+
+  useEffect(() => {
+    setMainColor(color);
   }, [color]);
 
   return (

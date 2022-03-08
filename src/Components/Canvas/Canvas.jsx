@@ -21,9 +21,9 @@ function Canvas() {
 
   useEffect(() => {
     setDrawingColor(mainColor);
-    console.log(drawingColor);
-
-    canvasContext.current.strokeStyle = drawingColor;
+    if (mainColor) {
+      canvasContext.current.strokeStyle = mainColor;
+    }
   }, [mainColor]);
 
   function StartPainting(e) {
