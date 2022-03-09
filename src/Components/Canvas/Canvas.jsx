@@ -4,13 +4,13 @@ import "./Canvas.scss";
 
 function Canvas() {
   const width = window.innerWidth - 20;
-  const height = window.innerHeight - 375;
+  const height = window.innerHeight - 265;
   const canvasRef = useRef();
   const canvasContext = useRef();
   const { mainColor } = useContext(ColorContext);
   const [isDrawing, setIsDrawing] = useState(false);
   const [lineWidth, setLineWidth] = useState(25);
-  const [lineOpacity, setLineOpacity] = useState(0.5);
+  const [lineOpacity, setLineOpacity] = useState(0.1);
   const [isErasing, setIsErasing] = useState(true);
 
   useEffect(() => {
@@ -19,6 +19,7 @@ function Canvas() {
 
     context.lineWidth = 10;
     context.lineCap = "round";
+    context.shadowColor = "blue";
 
     canvasContext.current = context;
   }, []);
@@ -60,10 +61,14 @@ function Canvas() {
     switch (true) {
       case isErasing:
         canvasContext.current.strokeStyle = "white";
+        setLineOpacity(0.1);
+
         break;
 
       default:
         canvasContext.current.strokeStyle = mainColor;
+        setLineOpacity(0.5);
+
         break;
     }
   }
@@ -92,7 +97,7 @@ function Canvas() {
         </div>
 
         <div className='lineOpacity'>
-          <p>lineOpacity</p>
+          <p>Line Opacity</p>
           <input
             type='range'
             step='0.1'
@@ -104,11 +109,9 @@ function Canvas() {
         </div>
 
         {isErasing ? (
-          <button style={{ backgroundColor: "red" }} onClick={earaseHandler}>
-            Erase
-          </button>
+          <button onClick={earaseHandler}>Erase</button>
         ) : (
-          <button style={{ backgroundColor: "green" }} onClick={earaseHandler}>
+          <button style={{ backgroundColor: "red" }} onClick={earaseHandler}>
             Erasing
           </button>
         )}

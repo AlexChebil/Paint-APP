@@ -2,3 +2,17 @@ canvas {
   border: 2px solid green;
   background-color: white;
 }
+.settings {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  text-align: center;
+  button {
+    display: block;
+    padding: 0.5em 2.5em;
+    margin: 3.5em 0;
+    outline: none;
+    border: none;
+    border-radius: 2em;
+  }
+}
