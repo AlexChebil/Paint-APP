@@ -3,8 +3,8 @@ import { ColorContext } from "../Context/Context";
 import "./Canvas.scss";
 
 function Canvas() {
-  const [width, setWidth] = useState(window.innerWidth);
-  const [height, setHeigh] = useState(window.innerHeight);
+  const [width, setWidth] = useState(window.innerWidth - 20);
+  const [height, setHeigh] = useState(window.innerHeight - 265);
   const canvasRef = useRef();
   const canvasContext = useRef();
   const { mainColor } = useContext(ColorContext);
@@ -15,7 +15,7 @@ function Canvas() {
 
   //It sets the width and height of the graph based on the size of the browser window.
   function resizeHandler() {
-    setWidth(window.innerWidth - 10);
+    setWidth(window.innerWidth - 20);
     setHeigh(window.innerHeight - 265);
     // '-20 /-265' = Window width margin from the canvas.
   }
@@ -72,11 +72,13 @@ function Canvas() {
       case isErasing:
         canvasContext.current.strokeStyle = "white";
         setLineOpacity(0.1);
+        setLineWidth(50);
         break;
 
       default:
         canvasContext.current.strokeStyle = mainColor;
         setLineOpacity(0.5);
+        setLineWidth(25);
         break;
     }
   }
