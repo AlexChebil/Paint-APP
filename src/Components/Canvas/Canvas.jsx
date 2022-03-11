@@ -15,7 +15,7 @@ function Canvas() {
 
   //It sets the width and height of the graph based on the size of the browser window.
   function resizeHandler() {
-    setWidth(window.innerWidth - 20);
+    setWidth(window.innerWidth - 10);
     setHeigh(window.innerHeight - 265);
     // '-20 /-265' = Window width margin from the canvas.
   }
