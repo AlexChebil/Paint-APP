@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
 import { ColorContext } from "../Context/Context";
 import "./Canvas.scss";
+//import Slider from "@mui/material/Slider";
 
 function Canvas() {
   const [width, setWidth] = useState(window.innerWidth - 20);
@@ -126,6 +127,7 @@ function Canvas() {
           </button>
         )}
       </div>
+      {/* <Slider defaultValue={50} aria-label='Default' valueLabelDisplay='auto' /> */}
     </div>
   );
 }
