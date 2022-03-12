@@ -2,6 +2,8 @@
 
 Paint-App is a React application to quickly sketch some new ideas.
 
+Live DEMO => https://paint-app.pages.dev/
+
 ## Installation
 
 Use the package manager [npm](https://pip.pypa.io/en/stable/) to install Paint-App.
