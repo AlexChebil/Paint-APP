@@ -47,15 +47,17 @@ function ColorPicker() {
         type='color'
       />
       <div className='similarColors'>
-        {similarColors
-          ? numberOfSimilarColors.map((entry) => (
-              <div
-                key={entry}
-                onClick={() => setColor(similarColors[entry].hex.value)}
-                style={{ backgroundColor: `${similarColors[entry].hex.value}` }}
-              ></div>
-            ))
-          : null}
+        {similarColors ? (
+          numberOfSimilarColors.map((entry) => (
+            <div
+              key={entry}
+              onClick={() => setColor(similarColors[entry].hex.value)}
+              style={{ backgroundColor: `${similarColors[entry].hex.value}` }}
+            ></div>
+          ))
+        ) : (
+          <h2>Select A Color For Different Variations.</h2>
+        )}
       </div>
     </div>
   );

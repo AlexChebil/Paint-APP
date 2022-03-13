@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
 import { ColorContext } from "../Context/Context";
 import "./Canvas.scss";
-//import Slider from "@mui/material/Slider";
+import Slider from "@mui/material/Slider";
 
 function Canvas() {
   const [width, setWidth] = useState(window.innerWidth - 20);
@@ -98,8 +98,12 @@ function Canvas() {
       <div className='settings'>
         <div className='lineWidth'>
           <p>Line Width</p>
-          <input
-            type='range'
+
+          <Slider
+            className='slider'
+            size='small'
+            aria-label='Default'
+            valueLabelDisplay='auto'
             value={lineWidth}
             min={1}
             max={50}
@@ -109,12 +113,17 @@ function Canvas() {
 
         <div className='lineOpacity'>
           <p>Line Opacity</p>
-          <input
-            type='range'
-            step='0.1'
+
+          <Slider
+            className='slider'
+            size='small'
+            aria-label='Small steps'
+            valueLabelDisplay='auto'
+            value={lineOpacity}
+            step={0.1}
             min={0.1}
             max={1}
-            value={lineOpacity}
+            marks /* `marks` is a prop that allows you to add a label to the slider. */
             onChange={(e) => setLineOpacity(e.target.value)}
           />
         </div>
@@ -127,7 +136,6 @@ function Canvas() {
           </button>
         )}
       </div>
-      {/* <Slider defaultValue={50} aria-label='Default' valueLabelDisplay='auto' /> */}
     </div>
   );
 }
